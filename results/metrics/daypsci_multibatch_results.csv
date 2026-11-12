@@ -1,0 +1,2 @@
+test_batch,validation_batch,training_batch_count,training_rows,validation_rows,test_rows,feature_count,threshold,validation_f1,test_accuracy,test_anomaly_precision,test_anomaly_recall,test_anomaly_f1,test_normal_count,test_anomaly_count,true_negative,false_positive,false_negative,true_positive
+pn_baseline__batch01,pn_combined_T1_batch11,9,7314,786,710,41,0.6249999999999999,0.5872576177285319,0.9492957746478873,0.0,0.0,0.0,710,0,674,36,0,0

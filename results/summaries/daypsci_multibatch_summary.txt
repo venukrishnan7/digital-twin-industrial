@@ -1,0 +1,14 @@
+DAYPSCI repeated cross-batch anomaly detection
+
+Each row evaluates one held-out test batch. Threshold is selected on a separate validation batch.
+Note: validation batch assignment is deterministic; review the CSV to see each pairing.
+
+          test_batch       validation_batch  training_batch_count  training_rows  validation_rows  test_rows  feature_count  threshold  validation_f1  test_accuracy  test_anomaly_precision  test_anomaly_recall  test_anomaly_f1  test_normal_count  test_anomaly_count  true_negative  false_positive  false_negative  true_positive
+pn_baseline__batch01 pn_combined_T1_batch11                     9           7314              786        710             41      0.625       0.587258       0.949296                     0.0                  0.0              0.0                710                   0            674              36               0              0
+
+Aggregate metrics across evaluated test batches:
+      test_accuracy  test_anomaly_precision  test_anomaly_recall  test_anomaly_f1
+mean         0.9493                     0.0                  0.0              0.0
+std             NaN                     NaN                  NaN              NaN
+min          0.9493                     0.0                  0.0              0.0
+max          0.9493                     0.0                  0.0              0.0

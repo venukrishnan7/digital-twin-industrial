@@ -1,0 +1,24 @@
+DAYPSCI validated cross-batch anomaly detection
+Training batches: 9
+Validation batch: pn_sensor_T1_batch02
+Test batch: pn_sensor_T2_batch03
+Selected threshold: 0.375
+Validation F1: 0.6214
+Test accuracy: 0.6493
+Test anomaly precision: 0.5477
+Test anomaly recall: 0.5443
+Test anomaly F1: 0.5460
+
+Confusion matrix:
+[[370 147]
+ [149 178]]
+
+Classification report:
+              precision    recall  f1-score   support
+
+      normal       0.71      0.72      0.71       517
+     anomaly       0.55      0.54      0.55       327
+
+    accuracy                           0.65       844
+   macro avg       0.63      0.63      0.63       844
+weighted avg       0.65      0.65      0.65       844

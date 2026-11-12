@@ -1,0 +1,26 @@
+PHASE 6B — ROW-LEVEL FACTORY FAULT DETECTION
+Rows: 2597 | Independent runs: 400
+Train rows: 1956 | Test rows: 641
+Train runs: 300 | Test runs: 100
+Features: ['cycle', 'state_before', 'drill_timer', 'sensor_wait', 'part_detected', 'clamp_closed', 'drill_complete', 'actuator_conveyor', 'actuator_clamp', 'actuator_drill']
+Accuracy: 0.9594
+Balanced accuracy: 0.9609
+Fault precision: 0.8627
+Fault recall: 0.9635
+Fault F1: 0.9103
+
+Confusion matrix (rows actual [0,1], columns predicted [0,1]):
+[[483  21]
+ [  5 132]]
+
+Classification report:
+                 precision    recall  f1-score   support
+
+normal/inactive       0.99      0.96      0.97       504
+   fault active       0.86      0.96      0.91       137
+
+       accuracy                           0.96       641
+      macro avg       0.93      0.96      0.94       641
+   weighted avg       0.96      0.96      0.96       641
+
+Interpretation: the model predicts simulator-defined active-fault labels. Results do not establish real-world generalization or safety suitability.

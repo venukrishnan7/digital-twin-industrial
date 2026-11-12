@@ -1,0 +1,6 @@
+﻿,Pred: Normal,Pred: Sensor anomaly,Pred: Valve anomaly,Pred: Combined anomaly,Pred: Propagated anomaly
+Actual: Normal,468,9,40,0,0
+Actual: Sensor anomaly,205,45,53,15,0
+Actual: Valve anomaly,0,0,0,0,0
+Actual: Combined anomaly,0,0,0,0,0
+Actual: Propagated anomaly,0,0,9,0,0

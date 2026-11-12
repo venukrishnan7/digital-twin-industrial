@@ -1,0 +1,46 @@
+PHASE 6C — RANDOM FOREST VS RULE-OVERRIDE HYBRID
+Rows: 2597 | independent runs: 400
+Train: 1956 rows / 300 runs
+Test: 641 rows / 100 runs
+Features: ['cycle', 'state_before', 'drill_timer', 'sensor_wait', 'part_detected', 'clamp_closed', 'drill_complete', 'actuator_conveyor', 'actuator_clamp', 'actuator_drill']
+Hybrid policy: predict fault if RF predicts fault OR a current-row timing, sensor-timeout, or safety rule triggers.
+
+RANDOM FOREST ONLY
+  Accuracy:          0.9594
+  Balanced accuracy: 0.9609
+  Fault precision:   0.8627
+  Fault recall:      0.9635
+  Fault F1:          0.9103
+  Confusion matrix (rows actual [0,1], columns predicted [0,1]):
+[[483  21]
+ [  5 132]]
+
+                 precision    recall  f1-score   support
+
+normal/inactive       0.99      0.96      0.97       504
+   fault active       0.86      0.96      0.91       137
+
+       accuracy                           0.96       641
+      macro avg       0.93      0.96      0.94       641
+   weighted avg       0.96      0.96      0.96       641
+
+HYBRID (RF + RULE OVERRIDE)
+  Accuracy:          0.9672
+  Balanced accuracy: 0.9792
+  Fault precision:   0.8671
+  Fault recall:      1.0000
+  Fault F1:          0.9288
+  Confusion matrix (rows actual [0,1], columns predicted [0,1]):
+[[483  21]
+ [  0 137]]
+
+                 precision    recall  f1-score   support
+
+normal/inactive       1.00      0.96      0.98       504
+   fault active       0.87      1.00      0.93       137
+
+       accuracy                           0.97       641
+      macro avg       0.93      0.98      0.95       641
+   weighted avg       0.97      0.97      0.97       641
+
+Caution: labels and rule triggers come from the same simulator. This measures agreement with simulator-generated labels, not independent real-world validation. The hybrid is an offline research comparison, not a controller.

@@ -1,0 +1,46 @@
+PHASE 6E: INDEPENDENT SIMULATION STRESS TEST
+====================================================
+Baseline input: factory_phase6_dataset.csv
+Baseline rows: 2597
+Baseline runs: 400
+Stress rows: 1819
+Stress runs: 250
+Features used (12): cycle, drill_timer, sensor_wait, part_detected, clamp_closed, drill_complete, residual_part, residual_clamp, residual_drill_complete, actuator_conveyor, actuator_clamp, actuator_drill
+
+Random Forest
+  accuracy: 0.8835
+  balanced_accuracy: 0.8868
+  fault_precision: 1.0000
+  fault_recall: 0.7735
+  fault_f1: 0.8723
+  missed_faults: 212
+  false_alarms: 0
+  confusion_matrix [[TN, FP], [FN, TP]]:
+[[883, 0], [212, 724]]
+
+Hybrid RF + rule override
+  accuracy: 0.9093
+  balanced_accuracy: 0.9119
+  fault_precision: 1.0000
+  fault_recall: 0.8237
+  fault_f1: 0.9033
+  missed_faults: 165
+  false_alarms: 0
+  confusion_matrix [[TN, FP], [FN, TP]]:
+[[883, 0], [165, 771]]
+
+Per-stress-case results
+----------------------------------------------------
+extreme_slow_drilling | RF | rows=527 | fault_recall=0.7944 | fault_precision=1.0000 | missed_faults=74 | false_alarms=0
+extreme_slow_drilling | Hybrid | rows=527 | fault_recall=0.8444 | fault_precision=1.0000 | missed_faults=56 | false_alarms=0
+intermittent_interlock | RF | rows=200 | fault_recall=0.4032 | fault_precision=1.0000 | missed_faults=74 | false_alarms=0
+intermittent_interlock | Hybrid | rows=200 | fault_recall=0.6210 | fault_precision=1.0000 | missed_faults=47 | false_alarms=0
+late_sensor_failure | RF | rows=227 | fault_recall=0.9588 | fault_precision=1.0000 | missed_faults=4 | false_alarms=0
+late_sensor_failure | Hybrid | rows=227 | fault_recall=0.9794 | fault_precision=1.0000 | missed_faults=2 | false_alarms=0
+mixed_slow_plus_sensor | RF | rows=519 | fault_recall=0.8310 | fault_precision=1.0000 | missed_faults=60 | false_alarms=0
+mixed_slow_plus_sensor | Hybrid | rows=519 | fault_recall=0.8310 | fault_precision=1.0000 | missed_faults=60 | false_alarms=0
+unseen_nominal_noise | RF | rows=346 | fault_recall=0.0000 | fault_precision=0.0000 | missed_faults=0 | false_alarms=0
+unseen_nominal_noise | Hybrid | rows=346 | fault_recall=0.0000 | fault_precision=0.0000 | missed_faults=0 | false_alarms=0
+
+CAUTION: This is a simulator-based stress test with constructed labels.
+It is not a real-world validation or a safety certification.

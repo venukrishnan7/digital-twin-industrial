@@ -1,0 +1,12 @@
+batch,rows,columns,anomaly_positives,fault_positives,event_types,missing_cells
+pn_baseline__batch01,710,32,0,0,"{1: 400, 2: 300, 3: 10}",1
+pn_combined_T1_batch11,786,32,111,26,"{1: 400, 2: 306, 3: 80}",1
+pn_sensor_T1_batch02,798,32,286,28,"{1: 404, 2: 304, 3: 90}",1
+pn_sensor_T2_batch03,844,32,318,32,"{1: 432, 2: 320, 3: 92}",219
+pn_sensor_T3_batch04,710,32,194,0,"{1: 400, 2: 300, 3: 10}",1
+pn_sensor_T4_batch05,1190,32,673,309,"{1: 798, 2: 306, 3: 86}",1
+pn_sensor_T5_batch06,762,32,240,14,"{1: 414, 2: 300, 3: 48}",1
+pn_sensor_T6_batch07,718,32,286,3,"{1: 400, 2: 300, 3: 18}",1
+pn_valve_T1_batch08,770,32,0,18,"{1: 400, 2: 312, 3: 58}",1
+pn_valve_T2_batch09,812,32,0,18,"{1: 400, 2: 312, 3: 100}",1
+pn_valve_T3_batch10,710,32,0,0,"{1: 400, 2: 300, 3: 10}",1

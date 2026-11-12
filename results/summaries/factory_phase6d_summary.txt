@@ -1,0 +1,21 @@
+PHASE 6D — REPEATED GROUPED-SPLIT ROBUSTNESS CHECK
+Dataset rows: 2597
+Independent runs: 400
+Random split seeds: [11, 23, 42, 57, 81, 104, 206, 315, 421, 509]
+Each split keeps entire runs together in train or test.
+
+RANDOM_FOREST
+  accuracy: mean=0.9532, std=0.0181
+  balanced_accuracy: mean=0.9606, std=0.0074
+  fault_precision: mean=0.8603, std=0.0571
+  fault_recall: mean=0.9764, std=0.0210
+  fault_f1: mean=0.9131, std=0.0251
+
+HYBRID
+  accuracy: mean=0.9587, std=0.0226
+  balanced_accuracy: mean=0.9724, std=0.0157
+  fault_precision: mean=0.8624, std=0.0586
+  fault_recall: mean=1.0000, std=0.0000
+  fault_f1: mean=0.9252, std=0.0342
+
+Caution: repeated splits measure split sensitivity only. They do not establish generalization to real equipment or independently generated data.
